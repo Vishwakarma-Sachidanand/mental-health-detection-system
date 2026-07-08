@@ -1,0 +1,73 @@
+import type { TeamMember } from "@/types";
+
+export const TEAM_MEMBERS: TeamMember[] = [
+  {
+    id: "guide",
+    name: "Dr. Prof. Guide Name",
+    role: "Project Guide",
+    guide: true,
+    skills: [
+      "Machine Learning",
+      "Deep Learning",
+      "Natural Language Processing",
+      "Research Methodology",
+    ],
+    responsibilities: [
+      "Project supervision and mentorship",
+      "Technical guidance on AI/ML architecture",
+      "Review of research methodology",
+      "Academic evaluation and feedback",
+    ],
+    avatar: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&h=200&fit=crop",
+    linkedin: "https://linkedin.com",
+    email: "guide@university.edu",
+  },
+  {
+    id: "student-1",
+    name: "Student 1",
+    role: "Backend & ML Developer",
+    skills: [
+      "Python",
+      "FastAPI",
+      "TensorFlow",
+      "PyTorch",
+      "Machine Learning",
+      "Database Design",
+    ],
+    responsibilities: [
+      "Backend API development with FastAPI",
+      "AI model training and optimization",
+      "Multimodal fusion layer implementation",
+      "Database design and authentication",
+      "API integration and testing",
+    ],
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop",
+    linkedin: "https://linkedin.com",
+    github: "https://github.com",
+    email: "student1@university.edu",
+  },
+  {
+    id: "student-2",
+    name: "Student 2",
+    role: "Frontend Developer",
+    skills: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "UI/UX Design",
+      "Framer Motion",
+    ],
+    responsibilities: [
+      "Frontend application development",
+      "UI/UX design and implementation",
+      "Dashboard and analytics visualization",
+      "API integration with Axios",
+      "Responsive design and accessibility",
+    ],
+    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop",
+    linkedin: "https://linkedin.com",
+    github: "https://github.com",
+    email: "student2@university.edu",
+  },
+];

@@ -1,0 +1,36 @@
+# Frontend dependencies 
+node_modules/
+# Frontend build files 
+dist/ 
+build/ 
+# Environment variables 
+.env 
+.env.local 
+.env.development 
+.env.production 
+# Python virtual environments 
+venv/ 
+.venv/ 
+env/ 
+# Python cache 
+__pycache__/ 
+*.pyc 
+*.pyo 
+*.pyd 
+# ML datasets 
+data/ 
+dataset/ 
+datasets/ 
+# Jupyter Notebook 
+.ipynb_checkpoints/ 
+# IDE settings 
+.vscode/ 
+.idea/ 
+# Operating system files 
+.DS_Store 
+Thumbs.db 
+# Logs 
+*.log 
+npm-debug.log* 
+yarn-debug.log* 
+yarn-error.log*
