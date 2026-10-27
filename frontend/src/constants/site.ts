@@ -5,8 +5,8 @@ export const SITE_CONFIG = {
     "Advanced multimodal AI platform for mental health prediction through text, voice, and video analysis.",
   url: "https://mindscope-ai.vercel.app",
   email: "contact@mindscope-ai.edu",
-  phone: "+91 98765 43210",
-  linkedin: "https://linkedin.com/company/mindscope-ai",
+  phone: "+91 8948837217",
+  linkedin: "https://linkedin.com/company/mindscope-ai.AI",
   github: "https://github.com/mindscope-ai",
 };
 

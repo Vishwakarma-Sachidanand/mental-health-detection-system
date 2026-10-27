@@ -84,6 +84,8 @@ export interface TeamMember {
   skills: string[];
   responsibilities: string[];
   avatar: string;
+  avatarPosition?: string;
+  avatarScale?: number;
   linkedin?: string;
   github?: string;
   email?: string;
