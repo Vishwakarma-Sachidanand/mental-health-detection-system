@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, GraduationCap } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 import { PageTransition, SectionHeader } from "@/components/common/motion";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { Badge } from "@/components/ui/badge";
@@ -14,25 +14,25 @@ function TeamMemberCard({ member }: { member: TeamMember }) {
   return (
     <motion.div
       whileHover={{ y: -4 }}
-      className={`glass-card overflow-hidden ${member.guide ? "ring-1 ring-blue-500/30" : ""}`}
+      className="glass-card overflow-hidden"
     >
-      <div className="relative h-48 bg-gradient-to-br from-blue-600/20 to-purple-600/20">
-        <Image
-          src={member.avatar}
-          alt={member.name}
-          fill
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A] via-transparent to-transparent" />
-        {member.guide && (
-          <Badge className="absolute top-4 right-4" variant="info">
-            <GraduationCap className="h-3 w-3 mr-1" />
-            Guide
-          </Badge>
-        )}
+      <div className="flex justify-center px-6 py-6">
+        <div className="relative size-[120px] shrink-0 overflow-hidden rounded-full border-[3px] border-blue-400/80 bg-[#0F172A] shadow-[0_8px_32px_rgba(59,130,246,0.28)]">
+          <Image
+            src={member.avatar}
+            alt={member.name}
+            fill
+            className="origin-center object-cover"
+            style={{
+              objectPosition: member.avatarPosition ?? "center top",
+              transform: `scale(${member.avatarScale ?? 1.05})`,
+            }}
+            sizes="120px"
+          />
+        </div>
       </div>
 
-      <div className="p-6">
+      <div className="px-6 pb-6">
         <h3 className="text-xl font-semibold">{member.name}</h3>
         <p className="text-sm text-blue-400 mb-4">{member.role}</p>
 
@@ -105,9 +105,6 @@ function TeamMemberCard({ member }: { member: TeamMember }) {
 }
 
 export function TeamPageContent() {
-  const guide = TEAM_MEMBERS.filter((m) => m.guide);
-  const students = TEAM_MEMBERS.filter((m) => !m.guide);
-
   return (
     <PageTransition>
       <div className="relative pt-24 pb-16">
@@ -117,28 +114,14 @@ export function TeamPageContent() {
 
           <SectionHeader
             badge="Team"
-            title="Meet Our Team"
-            description="The talented individuals behind MindScope AI."
+            title="Meet The Developers"
+            description="Two minds, one vision — the talented individuals behind MindScope AI, building intelligent solutions together."
           />
 
-          {guide.length > 0 && (
-            <div className="mb-12">
-              <h3 className="mb-6 text-lg font-semibold text-center">Project Guide</h3>
-              <div className="mx-auto max-w-md">
-                {guide.map((member) => (
-                  <TeamMemberCard key={member.id} member={member} />
-                ))}
-              </div>
-            </div>
-          )}
-
-          <div>
-            <h3 className="mb-6 text-lg font-semibold text-center">Team Members</h3>
-            <div className="grid gap-8 md:grid-cols-2 max-w-4xl mx-auto">
-              {students.map((member) => (
-                <TeamMemberCard key={member.id} member={member} />
-              ))}
-            </div>
+          <div className="grid gap-8 md:grid-cols-2 max-w-4xl mx-auto">
+            {TEAM_MEMBERS.map((member) => (
+              <TeamMemberCard key={member.id} member={member} />
+            ))}
           </div>
         </div>
       </div>
